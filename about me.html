@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
+
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 10%;
+      gap: 40px;
+    }
+
+    .about-left {
+      flex: 1 1 400px;
+      max-width: 600px;
+    }
+
+    .about-left h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #00c3ff;
+    }
+
+    .about-left p {
+      line-height: 1.8;
+      font-size: 1rem;
+      color: #dcdcdc;
+    }
+
+    .about-right {
+      flex: 1 1 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 350px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .about-right::before {
+      content: "Your Image Here";
+      color: #bbb;
+      font-size: 1.1rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .about-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 8%;
+      }
+
+      .about-left h2 {
+        font-size: 2rem;
+      }
+
+      .about-right {
+        width: 80%;
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="about-section">
+    <div class="about-left">
+      <h2>About Me</h2>
+      <p>
+        Hi! I'm Shivam — a passionate Computer Science student who loves building creative projects 
+        and exploring new ideas. I’m currently learning web development, AI concepts, and practical tech 
+        that can make real-life impact. I enjoy designing, experimenting, and continuously improving 
+        my skills while keeping things simple and meaningful.
+      </p>
+    </div>
+
+    <div class="about-right">
+      <!-- You can add your image here -->
+      <!-- Example: <img src="your-image.jpg" alt="Shivam" style="width:100%; height:100%; object-fit:cover; border-radius:15px;"> -->
+    </div>
+  </section>
+</body>
+</html>
