@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAITM | Shivam</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #141e30, #243b55);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(6px);
+    }
+
+    .navbar img {
+      width: 70px;
+    }
+
+    .navlinks {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .navlinks a {
+      color: #00c3ff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .navlinks a:hover {
+      color: #fff;
+    }
+
+    .btn button {
+      background: #00c3ff;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 20px;
+      margin-left: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn button:hover {
+      background: #008ecc;
+    }
+
+    /* Sections */
+    section {
+      padding: 100px 10%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      min-height: 90vh;
+    }
+
+    /* Home Section */
+    .home {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 10%;
+    }
+
+    .home h1 {
+      font-size: 3rem;
+      color: #00c3ff;
+      margin-bottom: 20px;
+    }
+
+    .home p {
+      font-size: 1.1rem;
+      color: #ddd;
+      max-width: 700px;
+    }
+
+    /* About Section */
+    .about-saitm .text {
+      flex: 1 1 400px;
+      max-width: 600px;
+    }
+
+    .about-saitm .text h2 {
+      color: #00c3ff;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    .about-saitm .text p {
+      color: #dcdcdc;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    .about-saitm .image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Contact Section */
+    .contact {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 2.2rem;
+      color: #00c3ff;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      font-size: 1.1rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      line-height: 1.7;
+    }
+
+    .contact img {
+      margin-top: 40px;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Sign-In Section */
+    .signin {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(14deg, beige, blue);
+      color: black;
+      padding-top: 120px;
+      padding-bottom: 120px;
+    }
+
+    form {
+      width: 100%;
+      max-width: 400px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 25px;
+      border-radius: 12px;
+      color: black;
+    }
+
+    form h1 {
+      margin-bottom: 15px;
+    }
+
+    form label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    form input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+    }
+
+    form input[type="submit"] {
+      background: #141e30;
+      color: white;
+      font-weight: bold;
+      border: none;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    form input[type="submit"]:hover {
+      background: #00c3ff;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .text h2 {
+        font-size: 1.8rem;
+      }
+      .navbar {
+        padding: 15px 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <img src="pngimg.com_-_asteroid_PNG17-removebg-preview.png" alt="Logo">
+    <ul class="navlinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#signin">Sign In</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="home">
+    <h1>Welcome to SAITM</h1>
+    <p>
+      Hi! I'm <strong>Shivam Shukla</strong>, a Computer Science student at 
+      <strong>St. Andrews Institute of Technology and Management (SAITM)</strong>.  
+      Scroll down to explore more about my college.
+    </p>
+  </section>
+
+  <!-- About SAITM Section -->
+  <section id="about" class="about-saitm">
+    <div class="text">
+      <h2>About SAITM</h2>
+      <p>
+        St. Andrews Institute of Technology and Management (SAITM), located in Gurugram, Haryana, 
+        is a leading institute offering top-quality education in engineering, management, and computer applications.  
+        It focuses on skill development, innovation, and research, with a goal to produce industry-ready professionals.  
+        The campus provides modern infrastructure, experienced faculty, and excellent placement opportunities 
+        for its students.
+      </p>
+    </div>
+    <div class="image">
+      <img src="saitm 2.jpeg" alt="SAITM Campus">
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>
+      Address: Khurrampur, Farrukh Nagar, Haily Mandi Road, Gurgaon, Delhi (NCR), 122506 <br>
+      <strong>Mobile:</strong> (+91) 8505937772 <br>
+      <strong>Email:</strong> admissions@saitm.org
+    </p>
+    <img src="SAITM.jpg" alt="SAITM Campus">
+  </section>
+
+  <!-- Sign In Section -->
+  <section id="signin" class="signin">
+    <form>
+      <h1>Sign-In</h1>
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" placeholder="e.g. YOU">
+
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" placeholder="e.g. HELLO">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="e.g. abcxyz@gmail.com">
+
+      <label for="pass">Password</label>
+      <input type="password" id="pass" placeholder="Enter password">
+
+      <label>Date & Time</label>
+      <input type="date">
+      <input type="time">
+
+      <input type="submit" value="Submit">
+    </form>
+  </section>
+
+  <footer>
+    © 2025 Shivam Shukla | SAITM | All Rights Reserved
+  </footer>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In Page</title>
+
+    <style>
+ *{
+    margin: 0;
+    padding: 0;
+
+    }
+
+    body{
+        background-image: linear-gradient(14deg, beige, blue
+
+
+
+
+        );
+        width: 100%;
+        height: 100vh;
+    }
+.navbar{
+    /*width: 100%;*/
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    /*background-color: beige;*/
+    align-items: center;
+
+}
+.navlinks{
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    
+}
+.navlinks a{
+    text-decoration: ;
+    color: beige;
+    font-size: 20px;
+
+text-decoration: none;
+}
+
+.nav{
+    width: 70px;
+    height: 50px;
+    border-radius:10px;
+    text-decoration: none;
+}
+.nav a {
+    font-size: 10px;
+    color: black;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+form{
+    width: 100%;
+    font-size: 20px;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+
+    </style>
+</head>
+<body>
+     <nav class="navbar">
+   <a href="">
+    <img src="pngimg.com_-_asteroid_PNG17-removebg-preview.png" alt="" width="70">
+    
+   </a>
+   
+</a>
+<ul class="navlinks">
+<li><a href="inde3copy.html">Home</a></li>
+<li><a href="index3.1.html">Contact Us</a></li>
+<li><a href="index3.2.html">About Us</a></li>
+<li><a href="http://">Services</a></li>
+
+
+
+
+</ul>
+<div class="btn">
+    <a href="index4.html"> <button>Sign In</button></a>
+    <a href="index4.1.html"> <button>Log In</button></a>
+</div>
+
+
+    
+    </nav>
+    <div class="container">
+        <div class="form">
+
+            <form>
+                <h1>Log-In</h1>
+
+            <br>
+   
+    <label for="">Username</label>
+    <br>
+    <input type="text" id="lname" placeholder="e.g John">
+    <br>
+    <label for="">Email</label>
+    <br>
+    <input type="email" name=""@gmail id="email" placeholder="nigga@gmail.com">
+    <br>
+    <label for="">Password</label>
+    <br>
+    <input type="password" name="name" id="pass" placeholder="anything">
+    <br>
+    <input type="submit" value="submit" id="submit">
+
+    <input type="checkbox" name="id=">
+    <br>
+    
+    </form>
+        </div>
+    </div>
+
